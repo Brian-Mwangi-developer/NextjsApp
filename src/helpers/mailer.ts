@@ -28,10 +28,10 @@ export const sendEmail = async({email,emailType, userId}:any)=>{
           });
 
           const mailOptions ={
-            from:"talentedman254@gmail.com",
+            from:"myemail@gmail.com",
             to:email,
             subject:emailType === "VERIFY" ? "verify your email": "Reset your password",
-            html:`<p>Click <a href= "${process.env.DOMAIN}/verifyemail?token=${hashedtoken}">here</a> to ${emailType === "VERIFY" ? "verify your email":"Reset your password"}</p>`
+            html:`<p>Click <a href= "${process.env.DOMAIN}/${emailType === "VERIFY" ? 'verify':'resetpassword'}?token=${hashedtoken}">here</a> to ${emailType === "VERIFY" ? "verify your email":"Reset your password"}</p>`
           }
           const mailresponse = await transport.sendMail(mailOptions);
           return mailresponse;
