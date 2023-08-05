@@ -64,6 +64,7 @@ export default function LoginPage(){
            placeholder="password" />
            <button className="p-2 border border-gray-200 rounded-lg mb-4 focus:outline-none focus:border-gray-600 text-white" onClick={onLogin}>{buttonDisabled? "No Login": "Login"}</button>
            <Link href="/signup"> visit Signup page</Link>
+           <Link href="/forgotpassword" className="text-blue-500 text"> forgot password?</Link>
         </div>
     )
 }
