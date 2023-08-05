@@ -16,7 +16,7 @@ export async function POST(request: NextRequest) {
         console.log(hashedPassword);
         const user = await User.findOneAndUpdate({
             forgotPasswordToken: token,
-            // forgotPasswordExpiry: { $gt: new Date() }, // Check token expiry
+            // forgotPasswordExpiry: { $gt: new Date() }, // pending: add the Check token expiry
             password: hashedPassword
         })
         if (!user) {
